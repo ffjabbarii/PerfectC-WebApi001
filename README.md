@@ -20,23 +20,23 @@ A template and example for a RESTful API built with .NET 8. This API provides CR
 - ├── Startup/              # Configuration Services - dependency injection (e.g., rate limiting)
 - └── Program.cs            # Entry point
 
-- Getting Started
+## Getting Started
 - Clone the repo: git clone https://github.com/Peter-Russ/csharp-api-template.git
 - Restore dependencies: dotnet restore
 - Build: dotnet build
 - Run: dotnet run
 
-- Example API Endpoints
+## Example API Endpoints
 - GET /api/v1/products/all
 - GET /api/v1/products/{id}
 - POST /api/v1/products/add
 - PUT /api/v1/products/update- 
 - DELETE /api/v1/products/{id}
 
-- Error Handling & Rate Limiting
+## Error Handling & Rate Limiting
 - 400: Bad Request for invalid inputs.
 - 404: Not Found for missing resources.
 - 500: Internal Server Error for unexpected issues.
 - 429: Too Many Requests if rate limit is exceeded.
 
-- Licensed under the MIT License.
+## Licensed under the MIT License.
