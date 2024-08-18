@@ -1,6 +1,3 @@
-@ApiTemplate_HostAddress = http://localhost:5019
+@ApiTemplate_HttpDev = http://localhost:5019
+@ApiTemplate_HttpsDev = https://localhost:7072
 
-GET {{ApiTemplate_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
