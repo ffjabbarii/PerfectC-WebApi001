@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.RateLimiting;
 using System.Threading.RateLimiting;
+using ApiTemplate.Infrastructure;
 
 #endregion
 
@@ -21,6 +22,9 @@ namespace ApiTemplate.Startup
 
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
+
+            services.AddExceptionHandler<GlobalExceptionHandler>();
+            services.AddProblemDetails();
 
             // Configure rate limiting
             services.AddRateLimiter(options =>
@@ -64,7 +68,7 @@ namespace ApiTemplate.Startup
             });
 
             // Configure JWT authentication
-            string jwtSecret = Environment.GetEnvironmentVariable("JWT_SECRET") ?? throw new ArgumentNullException("JWT_SECRET not found");
+            /*string jwtSecret = Environment.GetEnvironmentVariable("JWT_SECRET") ?? throw new ArgumentNullException("JWT_SECRET not found");
             byte[] secretKey = Encoding.UTF8.GetBytes(jwtSecret);
 
             services.AddAuthentication(options =>
@@ -84,6 +88,7 @@ namespace ApiTemplate.Startup
                     IssuerSigningKey = new SymmetricSecurityKey(secretKey),
                 };
             });
+            */
             
             return services;
         }
