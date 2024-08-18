@@ -18,7 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <Folder Include="Models\Config\" />
+    <Folder Include="Models\Enums\" />
   </ItemGroup>
 
 </Project>

@@ -9,6 +9,8 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.RateLimiting;
 using System.Threading.RateLimiting;
 using ApiTemplate.Infrastructure;
+using ApiTemplate.Services.Interfaces;
+using ApiTemplate.Services;
 
 #endregion
 
@@ -19,6 +21,8 @@ namespace ApiTemplate.Startup
         public static IServiceCollection RegisterServices(this IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddSingleton<IProductService, ProductService>();
 
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
