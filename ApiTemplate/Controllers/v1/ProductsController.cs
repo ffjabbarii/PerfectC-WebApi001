@@ -80,14 +80,10 @@ namespace ApiTemplate.Controllers.v1
         {
             try
             {
-                if (product == null)
+                if (!ModelState.IsValid)
                 {
-                    return BadRequest("Product cannot be null.");
-                }
-
-                if (string.IsNullOrEmpty(product.Name) || product.Price <= 0)
-                {
-                    return BadRequest("Product must have a valid name and price.");
+                    _logger.LogWarning("Invalid model state for the email content.");
+                    return BadRequest(ModelState);
                 }
 
                 bool success = await _productService.AddProduct(product);
@@ -111,14 +107,10 @@ namespace ApiTemplate.Controllers.v1
         {
             try
             {
-                if (product == null || product.Id <= 0)
+                if (!ModelState.IsValid)
                 {
-                    return BadRequest("Product ID not valid or product data is null.");
-                }
-
-                if (string.IsNullOrEmpty(product.Name) || product.Price <= 0)
-                {
-                    return BadRequest("Product must have a valid name and price.");
+                    _logger.LogWarning("Invalid model state for the email content.");
+                    return BadRequest(ModelState);
                 }
 
                 bool success = await _productService.UpdateProduct(product);
@@ -147,7 +139,7 @@ namespace ApiTemplate.Controllers.v1
                     return BadRequest("Invalid product ID.");
                 }
 
-                var success = await _productService.DeleteProductById(id);
+                bool success = await _productService.DeleteProductById(id);
 
                 if (!success)
                 {
