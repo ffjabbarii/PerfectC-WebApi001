@@ -82,7 +82,7 @@ namespace ApiTemplate.Controllers.v1
             {
                 if (!ModelState.IsValid)
                 {
-                    _logger.LogWarning("Invalid model state for the email content.");
+                    _logger.LogWarning("Invalid model state for the product content.");
                     return BadRequest(ModelState);
                 }
 
@@ -109,7 +109,7 @@ namespace ApiTemplate.Controllers.v1
             {
                 if (!ModelState.IsValid)
                 {
-                    _logger.LogWarning("Invalid model state for the email content.");
+                    _logger.LogWarning("Invalid model state for the product content.");
                     return BadRequest(ModelState);
                 }
 

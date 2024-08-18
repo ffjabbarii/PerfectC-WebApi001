@@ -22,7 +22,7 @@ namespace ApiTemplate.Services
         };
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="EmailService"/> class.
+        /// Initializes a new instance of the <see cref="ProductService"/> class.
         /// </summary>
         /// <param name="logger">Logger instance for logging.</param>
         public ProductService(ILogger<ProductService> logger)
