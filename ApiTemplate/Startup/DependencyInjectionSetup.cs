@@ -26,7 +26,7 @@ namespace ApiTemplate.Startup
             services.AddExceptionHandler<GlobalExceptionHandler>();
             services.AddProblemDetails();
 
-            // Configure rate limiting
+            // Example rate-limiting configuration
             services.AddRateLimiter(options =>
             {
                 options.AddFixedWindowLimiter("FixedRateLimitWindow", opt =>
@@ -52,7 +52,7 @@ namespace ApiTemplate.Startup
                 };
             });
 
-            // Configure api versioning
+            // Configure api-versioning
             services.AddApiVersioning(options =>
             {
                 options.AssumeDefaultVersionWhenUnspecified = true;
@@ -67,8 +67,9 @@ namespace ApiTemplate.Startup
                 options.SubstituteApiVersionInUrl = true;
             });
 
-            // Configure JWT authentication
-            /*string jwtSecret = Environment.GetEnvironmentVariable("JWT_SECRET") ?? throw new ArgumentNullException("JWT_SECRET not found");
+            // Example JWT authentication Configuration
+            /*
+            string jwtSecret = Environment.GetEnvironmentVariable("JWT_SECRET") ?? throw new ArgumentNullException("JWT_SECRET not found");
             byte[] secretKey = Encoding.UTF8.GetBytes(jwtSecret);
 
             services.AddAuthentication(options =>
