@@ -1,3 +1,4 @@
+# Fred J - This is a very good example for Rider and put it in Debug Mode and do a Rsharper on it.... ***DerfIrabbaj
 # Product API
 
 A template and example for a RESTful API built with .NET 8. This API provides CRUD operations for managing products, includes rate limiting, and supports API versioning.
